@@ -9,9 +9,10 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .seeds import seed_commands
 from .config import Config
+from .api.journals_routes import journal_routes
+from .api.growthtracker_routes import growth_tracker_routes 
 
 app = Flask(__name__, static_folder='../react-vite/dist', static_url_path='/')
-
 # Setup login manager
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
@@ -28,12 +29,15 @@ app.cli.add_command(seed_commands)
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
+app.register_blueprint(journal_routes, url_prefix='/api/journals')
+app.register_blueprint(growth_tracker_routes, url_prefix='/api/growth-tracker')
+
 db.init_app(app)
 Migrate(app, db)
 
 # Application Security
-CORS(app)
-
+#CORS(app)
+CORS(app, supports_credentials=True)
 
 # Since we are deploying with Docker and Flask,
 # we won't be using a buildpack when we deploy to Heroku.
