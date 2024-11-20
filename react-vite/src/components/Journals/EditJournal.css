@@ -1,6 +1,6 @@
-.create-journal-container {
+.edit-journal-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     margin: 60px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -17,17 +17,14 @@ h1 {
 
 .form-group {
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .form-group label {
+    display: block;
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 8px;
     color: #333;
-    width: 100%;
 }
 
 .form-group input,
@@ -38,13 +35,6 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 6px;
-    box-sizing: border-box;
-}
-
-.form-group textarea {
-    min-height: 150px;
-    height: 200px;
-    resize: vertical;
 }
 
 .form-group input:focus,
@@ -54,41 +44,39 @@ h1 {
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-.button-group {
+.edit-buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
-    gap: 10px; /* Space between the buttons */
 }
 
-.create-button,
+.update-button,
 .cancel-button {
-    flex: 1; /* Ensure both buttons take equal space */
+    width: 45%; /* Ensures both buttons take up equal space */
     padding: 12px;
     font-size: 1.1rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center;
 }
 
-.create-button {
-    background-color: #28a745;
+.update-button {
+    background-color: #FFC7C2;
     color: white;
 }
 
-.create-button:hover {
-    background-color: #218838;
+.update-button:hover {
+    background-color: #FFB3AD;
 }
 
 .cancel-button {
-    background-color: #dc3545;
-    color: white;
+    background-color: #ccc;
+    color: black;
 }
 
 .cancel-button:hover {
-    background-color: #c82333;
+    background-color: #bbb;
 }
 
 .error {
@@ -98,8 +86,8 @@ h1 {
     text-align: center;
 }
 
-@media (max-width: 1000px) {
-    .create-journal-container {
+@media (max-width: 600px) {
+    .edit-journal-container {
         padding: 15px;
     }
 
@@ -113,7 +101,7 @@ h1 {
         padding: 8px;
     }
 
-    .create-button,
+    .update-button,
     .cancel-button {
         font-size: 1rem;
         padding: 10px;
