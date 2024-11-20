@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { thunkFetchJournals, thunkDeleteJournal } from '../../redux/journals';
 import { useNavigate } from 'react-router-dom';
 //import DeleteConfirmationModal from '../Modals/DeleteConfirmationModal';
-
+import DeleteJournal from './DeleteJournal'; 
 function JournalList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,16 +30,16 @@ const [journalToDelete, setJournalToDelete] = useState(null);
     setShowModal(true);
   };
 
-//   const handleConfirmDelete = () => {
-//     if (journalToDelete) {
-//       dispatch(thunkDeleteJournal(journalToDelete));
-//       setShowModal(false);
-//     }
-//   };
+  const handleConfirmDelete = () => {
+    if (journalToDelete) {
+      dispatch(thunkDeleteJournal(journalToDelete));
+      setShowModal(false);
+    }
+  };
 
-//   const handleCancelDelete = () => {
-//     setShowModal(false);
-//   };
+  const handleCancelDelete = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="page-wrapper">
@@ -85,13 +85,13 @@ const [journalToDelete, setJournalToDelete] = useState(null);
         ))}
       </div>
 
-      {/* {showModal && (
-        <DeleteConfirmationModal
+      {showModal && (
+        <DeleteJournal
           show={showModal}
           onConfirm={handleConfirmDelete}
           onCancel={handleCancelDelete}
         />
-      )} */}
+      )}
     </div>
   );
 }
