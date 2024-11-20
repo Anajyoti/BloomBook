@@ -1,30 +1,63 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { thunkCreateJournal } from '../../redux/journals';
 import { useNavigate } from 'react-router-dom';
+import { thunkCreateJournal } from '../../redux/journals';
+import './CreateJournal.css'; // Make sure to create a corresponding CSS file
 
-function CreateJournal() {
+const CreateJournal = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(thunkCreateJournal({ title, content }));
-    navigate('/journals');
+
+    const journalData = {
+      title,
+      content,
+    };
+
+    try {
+      // Dispatch the thunk to create a new journal
+      await dispatch(thunkCreateJournal(journalData));
+      navigate('/journals'); // Redirect to journals page
+    } catch (err) {
+      setError('Error while creating journal. Please try again.');
+      console.error(err);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Create New Journal</h1>
-      <label>Title</label>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} required />
-      <label>Content</label>
-      <textarea value={content} onChange={(e) => setContent(e.target.value)} required />
-      <button type="submit">Create</button>
-    </form>
+    <div className="create-journal-container">
+      <h1>Create a New Journal</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="content">Reflection, Goals & Today’s Accomplishment:</label>
+          <textarea
+            id="content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Create Journal</button>
+      </form>
+      {error && <p className="error">{error}</p>}
+    </div>
   );
-}
+};
 
 export default CreateJournal;

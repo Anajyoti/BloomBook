@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { thunkFetchJournals, thunkDeleteJournal } from '../../redux/journals';
 import { useNavigate } from 'react-router-dom';
-//import DeleteConfirmationModal from '../Modals/DeleteConfirmationModal';
 import DeleteJournal from './DeleteJournal'; 
 function JournalList() {
   const dispatch = useDispatch();

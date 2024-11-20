@@ -9,15 +9,17 @@
   }
   
   .create-btn {
-    background-color: #4CAF50;
+    background-color: #eb8798;
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
+    max-width: 80px;
+    min-width: 80px;
   }
   
   .create-btn:hover {
-    background-color: #45a049;
+    background-color: #d1536e;
   }
   
   .journals-grid {
