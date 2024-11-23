@@ -1,0 +1,81 @@
+/* ViewGrowthTracker.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #4a003e; /* Dark purple text for contrast */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tracker-details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff0f5; /* Soft pink card background */
+    border: 2px solid #ffcce6; /* Pink border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tracker-details-container h1 {
+    text-align: center;
+    color: #c2185b; /* Stronger pink */
+    margin-bottom: 20px;
+  }
+  
+  .tracker-details-card {
+    background-color: #ffd9ec; /* Pale pink for card details */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ffc1e3;
+  }
+  
+  .tracker-details-card h2 {
+    color: #880e4f; /* Dark pink for headings */
+    margin-bottom: 10px;
+  }
+  
+  .tracker-details-card p {
+    margin: 5px 0;
+  }
+  
+  .tracker-chart {
+    margin: 20px 0;
+    height: 300px; /* Ensures chart fits well */
+  }
+  
+  .tracker-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    background-color: #f8bbd0; /* Soft pink for buttons */
+    color: #880e4f; /* Dark pink text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f06292; /* Slightly darker pink on hover */
+  }
+  
+  .edit-btn {
+    background-color: #f48fb1; /* Lighter pink */
+  }
+  
+  .back-btn {
+    background-color: #fce4ec; /* Very pale pink */
+  }
+  
+  .edit-btn:hover,
+  .back-btn:hover {
+    background-color: #f06292; /* Unified hover effect */
+  }
+  

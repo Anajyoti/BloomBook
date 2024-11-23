@@ -1,0 +1,52 @@
+
+   .growth-tracker-list {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f0f8; /* Light pink background */
+  }
+  
+  .growth-tracker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .growth-tracker-card {
+    background: #fff;
+    border: 1px solid #f1a7c9; /* Light pink border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .growth-tracker-card h2 {
+    margin-top: 0;
+    color: #e83e8c; /* Dark pink color */
+  }
+  
+  .progress-bar-container {
+    margin-top: 10px;
+    background: #fce3f2; /* Light pink background */
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    background-color: #e83e8c; /* Dark pink progress bar */
+    transition: width 0.4s ease;
+  }
+  
+  .progress-label {
+    font-size: 12px;
+    padding-right: 5px;
+    color: #1f040d; /* Medium pink label color */
+  }
+  
