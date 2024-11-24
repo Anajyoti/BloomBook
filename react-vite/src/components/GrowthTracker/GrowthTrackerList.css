@@ -1,52 +1,232 @@
 
-   .growth-tracker-list {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f8f0f8; /* Light pink background */
-  }
-  
-  .growth-tracker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .growth-tracker-card {
-    background: #fff;
-    border: 1px solid #f1a7c9; /* Light pink border */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .growth-tracker-card h2 {
-    margin-top: 0;
-    color: #e83e8c; /* Dark pink color */
-  }
-  
-  .progress-bar-container {
-    margin-top: 10px;
-    background: #fce3f2; /* Light pink background */
-    border-radius: 20px;
-    overflow: hidden;
-    height: 20px;
-    position: relative;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    background-color: #e83e8c; /* Dark pink progress bar */
-    transition: width 0.4s ease;
-  }
-  
-  .progress-label {
-    font-size: 12px;
-    padding-right: 5px;
-    color: #1f040d; /* Medium pink label color */
-  }
-  
+   /* General styling for the page */
+.growth-tracker-list {
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef1f6; /* Soft pink background */
+  color: #4f1f47; /* Darker pink text */
+}
+
+/* Grid container for growth tracker cards */
+.growth-tracker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Individual card styling */
+.growth-tracker-card {
+  background-color: #fff;
+  border: 2px solid #f7d0e3; /* Light pink border */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.growth-tracker-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header inside card */
+.growth-tracker-card h2 {
+  margin-top: 0;
+  color: #d63384; /* Empowering dark pink */
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Details text inside the card */
+.growth-tracker-card p {
+  font-size: 1rem;
+  color: #6c1e5f; /* Muted pink for text */
+  margin: 10px 0;
+}
+
+/* Progress bar container */
+.progress-bar-container {
+  margin-top: 20px;
+  background: #fce3f2; /* Light pink */
+  border-radius: 50px;
+  overflow: hidden;
+  height: 25px;
+  position: relative;
+}
+
+/* Progress bar itself */
+.progress-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  background-color: #e83e8c; /* Dark pink for progress bar */
+  transition: width 0.5s ease;
+  border-radius: 50px;
+}
+
+/* Progress label inside the bar */
+.progress-label {
+  font-size: 12px;
+  padding-right: 5px;
+  color: white;
+}
+
+/* Card button group (view, edit, delete) */
+.tracker-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Individual button styling */
+.tracker-buttons button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-weight: bold;
+}
+
+/* View button */
+.view-btn {
+  background-color: #f7b7d3;
+  color: #6c1e5f;
+}
+
+.view-btn:hover {
+  background-color: #e83e8c;
+  transform: scale(1.05);
+}
+
+/* Edit button */
+.edit-btn {
+  background-color: #f7d0e3;
+  color: #4f1f47;
+}
+
+.edit-btn:hover {
+  background-color: #d63384;
+  transform: scale(1.05);
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #f8a1d1;
+  color: #6c1e5f;
+}
+
+.delete-btn:hover {
+  background-color: #e83e8c;
+  transform: scale(1.05);
+}
+
+/* Modal for deleting a growth tracker */
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.delete-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal header */
+.delete-modal-header {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #d63384;
+  font-weight: bold;
+}
+
+/* Modal buttons */
+.delete-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.delete-modal-buttons button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete-modal-buttons .cancel-btn {
+  background-color: #f7d0e3;
+  color: #4f1f47;
+}
+
+.delete-modal-buttons .confirm-btn {
+  background-color: #e83e8c;
+  color: white;
+}
+
+.delete-modal-buttons .cancel-btn:hover {
+  background-color: #f8a1d1;
+}
+
+.delete-modal-buttons .confirm-btn:hover {
+  background-color: #d63384;
+}
+
+/* Header with page title and Create New button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title text */
+.header h1 {
+  font-size: 2rem;
+  color: #4f1f47;
+  font-weight: bold;
+}
+
+/* Create new button */
+.create-btn {
+  background-color: #c03a5e;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #af284e;
+}
+
+/* Empty state when no growth trackers are present */
+.empty-state {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4f1f47;
+  margin-top: 50px;
+}

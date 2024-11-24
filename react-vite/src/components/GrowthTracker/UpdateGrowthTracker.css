@@ -1,73 +1,131 @@
+
+   /* General layout and styling for the page */
 .update-tracker-page {
+  padding: 30px 20px;
+  background-color: #fce4ec; /* Soft neutral pink background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #d81b60; /* Empowering deep pink for header */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Form container */
+.update-tracker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff; /* White background for the form for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Form group (individual input fields) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d81b60; /* Muted pink for labels */
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Input field styling */
+input {
+  padding: 12px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #f48fb1; /* Soft pink border */
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input field on focus */
+input:focus {
+  border-color: #f06292; /* Slightly darker pink for focus */
+  box-shadow: 0 0 5px rgba(240, 98, 146, 0.4);
+  outline: none;
+}
+
+/* Submit and Cancel buttons container */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.submit-btn, .cancel-btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 48%;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Submit button (empowering pink) */
+.submit-btn {
+  background-color: #f48fb1; /* Soft pink for submit button */
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #f06292; /* Darker pink on hover */
+  transform: scale(1.05);
+}
+
+/* Cancel button (light pink) */
+.cancel-btn {
+  background-color: #f1c4d7; /* Very light pink */
+  color: #d81b60; /* Deep empowering pink text */
+  border: none;
+}
+
+.cancel-btn:hover {
+  background-color: #f06292; /* Darker pink on hover */
+  transform: scale(1.05);
+}
+
+/* Error message styling */
+.error {
+  color: #d32f2f; /* Red color for error */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .update-tracker-page {
     padding: 20px;
   }
-  
-  h1 {
-    text-align: center;
-    color: #ff66b2; /* Pink for header */
-  }
-  
+
   .update-tracker-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    padding: 15px;
   }
-  
-  .form-group {
-    margin-bottom: 15px;
+
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: #ff66b2; /* Pink for labels */
-  }
-  
-  input {
-    padding: 8px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ff66b2; /* Pink border for inputs */
-    border-radius: 5px;
-  }
-  
-  .submit-btn {
-    background-color: #ff66b2; /* Pink submit button */
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .submit-btn:hover {
-    background-color: #ff3385; /* Darker pink on hover */
-  }
-  
-  .cancel-btn {
-    background-color: #ff3385; /* Darker pink for cancel button */
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #ff66b2; /* Lighter pink on hover */
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
+}
+

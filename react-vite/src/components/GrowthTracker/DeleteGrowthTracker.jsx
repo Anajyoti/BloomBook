@@ -1,5 +1,5 @@
 import React from 'react';
-import './DeleteGrowthTracker.css'; // Create this CSS file for styling (optional)
+import './DeleteGrowthTracker.css'; 
 
 const DeleteGrowthTracker = ({ show, onConfirm, onCancel }) => {
   if (!show) return null;

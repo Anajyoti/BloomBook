@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { thunkCreateJournal } from '../../redux/journals';
-import './CreateJournal.css'; // Ensure the corresponding CSS file is present
+import './CreateJournal.css'; 
 
 const CreateJournal = () => {
   const dispatch = useDispatch();

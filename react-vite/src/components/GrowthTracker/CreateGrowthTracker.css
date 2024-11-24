@@ -1,64 +1,151 @@
+
 .page-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .error-messages {
-    background-color: #f8d7da;
-    color: #842029;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .error-messages ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .growth-tracker-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .growth-tracker-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .growth-tracker-form input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .submit-btn {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cancel-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover,
-  .cancel-btn:hover {
-    opacity: 0.9;
-  }
-  
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fce4ec; /* Soft pink background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Error messages styling */
+.error-messages {
+  background-color: #f8bbd0; /* Light pink background for errors */
+  color: #d32f2f; /* Red for error text */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.error-messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.error-messages li {
+  margin: 5px 0;
+}
+
+/* Form styling */
+.growth-tracker-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.growth-tracker-form .form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.growth-tracker-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #d81b60; /* Softer, slightly muted pink */
+  font-size: 1.1rem;
+}
+
+/* Input field styling */
+.growth-tracker-form input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f48fb1; /* Lighter pink border */
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.growth-tracker-form input:focus {
+  border-color: #f06292; /* Slightly darker pink for focus */
+  outline: none;
+}
+
+/* Button styling */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 48%;
+}
+
+/* Submit button (Create Tracker) */
+.submit-btn {
+  background-color: #f48fb1; /* Soft pink background */
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #f06292; /* Slightly darker pink on hover */
+  transform: scale(1.05);
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: #f1c4d7; /* Very light pink for cancel button */
+  color: #d81b60; /* Deep pink text for cancel */
+}
+
+.cancel-btn:hover {
+  background-color: #f06292; /* Darker pink for hover */
+  transform: scale(1.05);
+}
+
+/* Focused state for input fields */
+.growth-tracker-form input:focus {
+  border-color: #f06292; /* Slightly darker pink for focus */
+  box-shadow: 0 0 5px rgba(240, 98, 146, 0.5);
+}
+
+/* Form field placeholder text */
+.growth-tracker-form input::placeholder {
+  color: #f8bbd0; /* Light pink placeholder */
+}
+
+/* Text for form description or hints (optional) */
+.form-description {
+  font-size: 0.9rem;
+  color: #d81b60; /* Soft deep pink */
+  margin-bottom: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Page header styling */
+h1 {
+  color: #d81b60; /* Deep pink header */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Animation for the form submission (loading state) */
+.loading-spinner {
+  display: block;
+  margin: 20px auto;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f48fb1; /* Spinner color matching the theme */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -67,15 +67,15 @@ body {
   }
   
   .edit-btn {
-    background-color: #f48fb1; /* Lighter pink */
+    background-color: #f584aa; /* Lighter pink */
   }
   
   .back-btn {
-    background-color: #fce4ec; /* Very pale pink */
+    background-color: #a24765; /* Very pale pink */
   }
   
   .edit-btn:hover,
   .back-btn:hover {
-    background-color: #f06292; /* Unified hover effect */
+    background-color: #d4688c; /* Unified hover effect */
   }
   

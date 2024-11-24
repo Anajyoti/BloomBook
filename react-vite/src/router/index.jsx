@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Welcome!</h1>,
+        element: <h1>Welcome To BloomBook!</h1>,
       },
       {
         path: "login",
@@ -61,13 +61,13 @@ export const router = createBrowserRouter([
        }, 
        {
         path: "growth-tracker/:trackerId/delete",
-        element: (
+        element: 
           <DeleteGrowthTracker
-            show={true} // Replace with dynamic state management as needed
-            onConfirm={() => console.log('Deleted!')} // Replace with actual delete logic
-            onCancel={() => console.log('Cancelled!')} // Replace with navigation or close modal logic
+            // show={true} // Replace with dynamic state management as needed
+            // onConfirm={() => console.log('Deleted!')} // Replace with actual delete logic
+            // onCancel={() => console.log('Cancelled!')} // Replace with navigation or close modal logic
           />
-        ), // Delete a specific growth tracker
+         // Delete a specific growth tracker
       },
     ],
   },

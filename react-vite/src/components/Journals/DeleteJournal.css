@@ -1,66 +1,92 @@
-/* Modal overlay styling */
+
+
+/* Modal Overlay */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it overlays other elements */
-  }
-  
-  /* Modal content box styling */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(135deg, #ffe6f2, #f8a1d1);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: #d63384;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Modal Buttons */
+.modal-buttons-deletenote {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.confirm-del-notebtn,
+.cancel-de-note-btn {
+  padding: 0.7rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.confirm-del-notebtn {
+  background-color: #e33478;
+  color: white;
+}
+
+.confirm-del-notebtn:hover {
+  background-color: #d12868;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(211, 40, 104, 0.4);
+}
+
+.cancel-de-note-btn {
+  background-color: #ffc6e5;
+  color: #d63384;
+}
+
+.cancel-de-note-btn:hover {
+  background-color: #f8a1d1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(248, 161, 209, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
   }
-  
-  /* Modal buttons layout */
-  .modal-buttons-deletenote {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+
+  .modal-content h2 {
+    font-size: 1.25rem;
   }
-  
-  /* Confirm delete button */
-  .confirm-del-notebtn {
-    background-color: #e63946;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 40%;
-  }
-  
-  .confirm-del-notebtn:hover {
-    background-color: #d62828;
-  }
-  
-  /* Cancel button */
+
+  .confirm-del-notebtn,
   .cancel-de-note-btn {
-    background-color: #457b9d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 40%;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
-  
-  .cancel-de-note-btn:hover {
-    background-color: #1d3557;
-  }
-  
+}

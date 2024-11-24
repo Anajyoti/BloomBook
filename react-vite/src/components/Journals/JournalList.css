@@ -1,76 +1,432 @@
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8e9f1; /* Softer light pink background */
+  color: #333;
+}
+
 .page-wrapper {
-    padding: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f8d7e9;
+  padding-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #d96b9f; /* Softer vibrant pink */
+}
+
+.create-btn {
+  background-color: #d96b9f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #c5568f; /* Softer dark pink for hover */
+}
+
+/* Journals List (updated layout) */
+.journals-grid {
+  display: flex;
+  flex-direction: column; /* Changed from grid to flex for vertical stacking */
+  gap: 20px;
+}
+
+/* Journal Card */
+.journal-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #f8d7e9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.journal-card h2 {
+  font-size: 1.5rem;
+  color: #d96b9f; /* Softer muted pink */
+  margin-bottom: 10px;
+}
+
+.journal-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Buttons on Journal Card */
+.journal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.view-btn {
+  background-color: #ff80a0; /* Soft pink */
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #f56a8a; /* Slightly darker pink */
+}
+
+.edit-btn {
+  background-color: #ff9cb3; /* Light soft pink for edit */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #e88b9c;
+}
+
+.delete-btn {
+  background-color: #fba0b5; /* Softer pinkish-red for delete */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #ec7991;
+  transform: scale(1.05);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  color: #d96b9f; /* Softer vibrant pink */
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.confirm-btn {
+  background-color: #fba0b5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #ec7991;
+}
+
+.cancel-btn {
+  background-color: #d3d6db; /* Softer gray */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #b8bdc2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .create-btn {
-    background-color: #eb8798;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    max-width: 80px;
-    min-width: 80px;
+}
+
+
+/* 
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fdf2f8; 
+  color: #333;
+}
+
+.page-wrapper {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f8d7e9;
+  padding-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #e83e8c; 
+}
+
+.create-btn {
+  background-color: #e83e8c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #c82366; 
+}
+
+
+.journals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.journal-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #f8d7e9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.journal-card h2 {
+  font-size: 1.5rem;
+  color: #d63384; 
+  margin-bottom: 10px;
+}
+
+.journal-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.journal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.view-btn {
+  background-color: #ff6ea1;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #e35c8a;
+}
+
+.edit-btn {
+  background-color: #ff85b3; 
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #d9729c;
+}
+
+.delete-btn {
+  background-color: #f67280; 
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d35668;
+  transform: scale(1.05);
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  color: #e83e8c;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.confirm-btn {
+  background-color: #f67280;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #d45668;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .create-btn:hover {
-    background-color: #d1536e;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .journals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .journal-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .journal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .view-btn, .edit-btn, .delete-btn {
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .view-btn {
-    background-color: #b84056;
-    color: white;
-  }
-  
-  .edit-btn {
-    background-color: #FFC107;
-    color: white;
-  }
-  
-  .delete-btn {
-    background-color: #DC3545;
-    color: white;
-  }
-  
-  .view-btn:hover {
-    background-color: #831c2c;
-  }
-  
-  .edit-btn:hover {
-    background-color: #e0a800;
-  }
-  
-  .delete-btn:hover {
-    background-color: #c82333;
-  }
-  
+} */

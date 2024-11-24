@@ -1,0 +1,89 @@
+/* General Reset and Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fdf2f8; /* Light pink background */
+    color: #333;
+  }
+  
+  .journal-details-wrapper {
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f8d7e9;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Header Styles */
+  .journal-details-wrapper h1 {
+    font-size: 2.5rem;
+    color: #e83e8c; /* Vibrant pink */
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f8d7e9;
+    padding-bottom: 10px;
+  }
+  
+  /* Content Styling */
+  .journal-details-wrapper p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  .journal-details-wrapper p span {
+    font-weight: bold;
+    color: #d63384; /* Muted pink for emphasis */
+  }
+  
+  /* Created and Updated Info */
+  .journal-details-wrapper .meta-info {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: right;
+  }
+  
+  .meta-info span {
+    font-weight: bold;
+    color: #d63384;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #e83e8c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #c82366; /* Darker pink for hover */
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
