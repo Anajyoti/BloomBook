@@ -1,0 +1,75 @@
+
+
+     .home-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to bottom, #f8c8d0, #fcd8e3); /* Soft light pink gradient */
+        min-height: 100vh;
+      }
+      
+      .home-header {
+        margin-bottom: 2rem;
+      }
+      
+      .home-header h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #b14257; /* Soft, empowering pink */
+      }
+      
+      .tagline {
+        font-size: 1.5rem;
+        color: #d17c8c; /* Soft, neutral pink */
+        margin: 0.5rem 0;
+      }
+      
+      .auth-btn, .nav-btn {
+        background-color: #f57d95; /* Soft pink for buttons */
+        color: white;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        margin: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+      
+      .auth-btn:hover, .nav-btn:hover {
+        background-color: #c5697d; /* Slightly darker pink on hover */
+      }
+      
+      .home-main {
+        width: 100%;
+        max-width: 600px;
+        padding: 1rem;
+      }
+      
+      .guest-content, .user-content {
+        background: rgb(255, 204, 213); /* Soft blush pink */
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      h2 {
+        font-size: 2rem;
+        color: #ac4d61; /* Soft empowering pink */
+      }
+      
+      p {
+        font-size: 1rem;
+        color: #5d222c; /* Soft neutral pinkish tone */
+        margin: 1rem 0;
+      }
+      
+      .dashboard-links {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1.5rem;
+      }
+      

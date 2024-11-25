@@ -10,14 +10,19 @@ import GrowthTrackerList from '../components/GrowthTracker/GrowthTrackerList';
 import CreateGrowthTracker from '../components/GrowthTracker/CreateGrowthTracker';
 import ViewGrowthTracker from '../components/GrowthTracker/ViewGrowthTracker';
 import UpdateGrowthTracker from '../components/GrowthTracker/UpdateGrowthTracker';
-import DeleteGrowthTracker from '../components/GrowthTracker/DeleteGrowthTracker'; // Import the new DeleteGrowthTracker component
+import DeleteGrowthTracker from '../components/GrowthTracker/DeleteGrowthTracker'; 
+import Home from '../components/Home/Home';
 export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
       {
         path: "/",
-        element: <h1>Welcome To BloomBook!</h1>,
+        element:   
+        // <><h1>Welcome To BloomBook!</h1>
+        <Home />,
+        // </>
+      
       },
       {
         path: "login",

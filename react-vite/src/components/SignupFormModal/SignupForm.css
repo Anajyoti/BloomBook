@@ -1,0 +1,111 @@
+/* Global styles for uniformity */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f0f5; /* Soft neutral pink */
+    color: #333;
+  }
+  
+  /* Signup modal container */
+  .signupModal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 450px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Header styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #ff6ea1; /* Vibrant pink for emphasis */
+    margin-bottom: 20px;
+  }
+  
+  /* Error message styling */
+  p {
+    color: #ff6ea1; /* Pink for error messages */
+    font-size: 0.9rem;
+    margin: 5px 0;
+    text-align: left;
+  }
+  
+  /* Form label styles */
+  label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6c4b6b; /* Slightly darker pink for labels */
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  /* Input field styles */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #e2b4b2; /* Soft pink border */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8e6f4; /* Light pink background */
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #ff6ea1; /* Focus border in vibrant pink */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #ff85b3; /* Soft pink button */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #ff6ea1; /* Slightly darker pink on hover */
+  }
+  
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .signupModal {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    label {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,5 +1,4 @@
 
-
 import './GrowthTrackerList.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +7,7 @@ import {
   thunkDeleteGrowthTracker,
 } from '../../redux/growthtracker';
 import { useNavigate } from 'react-router-dom';
-import DeleteGrowthTracker from './DeleteGrowthTracker'; // Modal Component for deletion
+import DeleteGrowthTracker from './DeleteGrowthTracker'; 
 
 function GrowthTrackerList() {
   const dispatch = useDispatch();
@@ -47,7 +46,17 @@ function GrowthTrackerList() {
   };
 
   if (!growthTrackers || growthTrackers.length === 0) {
-    return <p>No growth trackers found. Start tracking your progress today!</p>;
+    return (
+      <div className="no-trackers-wrapper">
+        <p>No growth trackers found. Start tracking your progress today!</p>
+        <button
+          className="create-btn"
+          onClick={() => navigate('/growth-tracker/create')}
+        >
+          Create New Tracker
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -77,7 +86,7 @@ function GrowthTrackerList() {
                 className="progress-bar"
                 style={{
                   width: `${(tracker.progress / tracker.target) * 100}%`,
-                 backgroundColor: tracker.progress >= tracker.target ? '#e83e8c' : '#f06292',
+                  backgroundColor: tracker.progress >= tracker.target ? '#e83e8c' : '#f06292',
                 }}
               >
                 <span className="progress-label">

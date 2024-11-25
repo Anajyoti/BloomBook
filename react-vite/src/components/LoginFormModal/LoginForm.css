@@ -1,0 +1,131 @@
+/* Global body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f0f5; /* Soft neutral pink background */
+    color: #333;
+  }
+  
+  /* Login modal container */
+  .login-modal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #ff6ea1; /* Soft pink color for a welcoming vibe */
+    margin-bottom: 20px;
+  }
+  
+  /* Form label styles */
+  label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6c4b6b; /* Slightly darker pink for labels */
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  /* Input field styles */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #e2b4b2; /* Soft pink border */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8e6f4; /* Lighter pink background for inputs */
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #ff6ea1; /* Focus border in soft pink */
+  }
+  
+  /* Error message styling */
+  p {
+    color: #ff6ea1; /* Soft pink for error messages */
+    font-size: 0.9rem;
+    margin: 5px 0;
+    text-align: left;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #ff85b3; /* Soft pink button background */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Button hover effects */
+  button:hover {
+    background-color: #ff6ea1; /* Slightly darker pink for hover effect */
+  }
+  
+  /* Button for Demo User */
+  button:last-of-type {
+    background-color: #f9d8e7; /* Light soft pink for demo button */
+    color: #6c4b6b;
+  }
+  
+  button:last-of-type:hover {
+    background-color: #f3b2c5; /* Slightly darker pink for hover effect */
+  }
+  
+  /* Adding a little space between buttons */
+  button + button {
+    margin-top: 10px;
+  }
+  
+  /* Modal container animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .login-modal {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+    .login-modal {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    button {
+      padding: 12px;
+      font-size: 1.1rem;
+    }
+  
+    label {
+      font-size: 1rem;
+    }
+  }
+  
