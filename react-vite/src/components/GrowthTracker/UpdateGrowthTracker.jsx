@@ -36,10 +36,24 @@ function UpdateGrowthTracker() {
     e.preventDefault();
 
     // Validate form input
-    if (!metric || !progress || !target) {
-      setError('Please fill out all fields.');
+    // if (!metric || !progress || !target) {
+    //   setError('Please fill out all fields.');
+    //   return;
+    // }
+    const newErrors = [];
+    if (!metric) newErrors.push('Metric is required.');
+    if (!progress || isNaN(progress) || progress < 0) {
+      newErrors.push('Progress must be a non-negative number.');
+    }
+    if (!target || isNaN(target) || target <= 0) {
+      newErrors.push('Target must be a positive number.');
+    }
+
+    if (newErrors.length) {
+      setErrors(newErrors);
       return;
     }
+
 
     // Ensure the date is in YYYY-MM-DD format
     // const formattedDate = new Date(dateLogged);
@@ -93,7 +107,7 @@ function UpdateGrowthTracker() {
             id="progress"
             value={progress}
             onChange={(e) => setProgress(e.target.value)}
-            placeholder="Enter your current progress"
+            placeholder="Enter your current progress (e.g., 10, 50)"
             required
             min="0"
           />
@@ -106,7 +120,7 @@ function UpdateGrowthTracker() {
             id="target"
             value={target}
             onChange={(e) => setTarget(e.target.value)}
-            placeholder="Enter your target"
+            placeholder="Enter your target (e.g., 100)"
             required
             min="0"
           />
